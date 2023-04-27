@@ -1,4 +1,5 @@
-package time_java;
+
+package test.java;
 
 public class Date {
 	public void data() {

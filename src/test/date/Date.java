@@ -1,4 +1,5 @@
-package test_date;
+
+package test.date;
 
 public class Date {
 	public void data() {

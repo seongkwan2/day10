@@ -1,4 +1,5 @@
-package time_care;
+
+package test.care;
 
 public class Test01 {
 	int num;
