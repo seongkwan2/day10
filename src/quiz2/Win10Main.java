@@ -1,4 +1,4 @@
-package quiz;
+package quiz2;
 
 import java.util.HashMap;
 import java.util.Scanner;
@@ -17,13 +17,9 @@ public class Win10Main {
 		Scanner scan = new Scanner(System.in);
 		int menu = 0;
 		boolean bool = true;
-		String calc = "calc";
-		String notepad = "notepad";
-		HashMap<String, String> map = new HashMap<>();
-		map.put("프로세서","i7-7700");
-		map.put("램", "16GB");
-		Win10Service win = new Win10Service(calc,notepad,map);
+		Win10Service win = new Win10Service();
 		
+		win.set_();
 
 		while(bool) {
 			System.out.println("1.성능\n2.기능사용\n3.종료하기\n>>>");

@@ -1,4 +1,4 @@
-package quiz;
+package quiz2;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -15,15 +15,25 @@ public class Win10Service {
 	Scanner scan = new Scanner(System.in);
 	ProcessBuilder pro = new ProcessBuilder();
 	
-	public Win10Service(String calc, String notepad, HashMap map) {
-		dto.setCalc(calc);
-		dto.setNotepad(notepad);
-		dto.setInfo(map);//각각의 인자 다시 셋팅
+	public Win10Service() {
+
 	}//service 생성자
-	
-	public void view() {
-		System.out.println(dto.getInfo());
+	public void set_() {
+		HashMap<String, String> map = new HashMap<>();
+		map.put("프로세서","i7-7700");
+		map.put("램", "16GB");
+		dto.setCalc("calc");
+		dto.setNotepad("notepad");
+		dto.setInfo(map);
 	}
+	public void view() {
+	    System.out.println("===시스템 성능 정보===");
+	    for (String key : dto.getInfo().keySet()) {
+	        System.out.println(key + " : " + dto.getInfo().get(key));
+	    }
+	}
+
+
 	
 	public void calc() {
 		String calc = dto.getCalc();

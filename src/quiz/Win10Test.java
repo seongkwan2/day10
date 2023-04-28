@@ -1,16 +1,16 @@
-package temp.quiz;
+package quiz;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Scanner;
-
-import quiz.Win10DTO;
 
 public class Win10Test {
 	public static void main(String[] args) {
 
 
 		Scanner scan = new Scanner(System.in);
+		ProcessBuilder pro = new ProcessBuilder();
 		int menu = 0,
 			menu2 = 0;
 		
@@ -32,7 +32,6 @@ public class Win10Test {
 				for (String key : map.keySet()) {
 					System.out.println(key + ": " + map.get(key));
 				}
-				System.out.println("출력");
 				break;
 			case 2:
 				System.out.println("기능을 입력하세요\n>>>");
@@ -40,13 +39,37 @@ public class Win10Test {
 				switch(menu2) {
 				case 1:
 					dto.getCalc();
-					ProcessBuilder pro = new ProcessBuilder();
-					System.out.println("프로그램실행");
-					String s = "calc";
-					pro.command(s);
+					System.out.println("계산기 실행");
+					String calc = "calc";
+					pro.command(calc);
+					try {
+						pro.start();
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
+					
 					break;
 
 				case 2:
+					dto.getNotepad();
+					System.out.println("메모장 실행");
+					String notepad = "notepad";
+					pro.command(notepad);
+					try {
+						pro.start();
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
+				case 3:
+					System.out.println("직접입력 합니다\n>>>");
+					dto.getMsg();
+					String msg = scan.next();
+					pro.command(msg);
+					try {
+						pro.start();
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
 				}
 				break;
 			case 3:
